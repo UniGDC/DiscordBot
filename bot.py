@@ -30,10 +30,20 @@ async def on_message(message):
         else:
             number = #find amount of choices
             title = #find title
-            embed = makepoll(number, title)
+            counter = 1
+            choices = []
+            while number > counter:
+                if counter % 10 == 1 and counter % 100 != 11:
+                    await bot.send_message(message.channel, "What is the title of the " + counter + "st choice?")
+                    
+                if counter % 10 == 2 and counter % 100 != 12:
+                    await bot.send_message(message.channel, "What is the title of the " + counter + "nd choice?")
+                if counter % 10 == 3 and counter % 100 != 13:
+                    await bot.send_message(message.channel, "What is the title of the " + counter + "rd choice?")
+                else:
+                    await bot.send_message(message.channel, "What is the title of the " + counter + "th choice?")
             await bot.say(embed = embed)
 
-def makepoll(number, title): #makes an embed
-    
+
 
 bot.run("")
